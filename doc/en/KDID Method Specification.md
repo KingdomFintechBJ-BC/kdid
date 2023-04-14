@@ -52,7 +52,7 @@ An example DID Document of did:kdid:beijing:Q123456789 is
   ],
   "id": " did:kdid:beijing:Q123456789",
   "alsoKnownAs": [
-    "https://remExample.com/"
+    "https://test.kdid.com/"
   ],
   "controller": [
     " did:kdid:beijing:Q123456789"
@@ -75,9 +75,9 @@ An example DID Document of did:kdid:beijing:Q123456789 is
   "authentication": [
     " did:kdid:beijing:Q123456789#keys-1",
     {
-      "id": " did:kdid:beijing:Q123456780#keys-2",
+      "id": " did:kdid:beijing:Q123456789#keys-2",
       "type": "SM2VerificationKey2022",
-      "controller": "did:kdid:beijing:Q123456780",
+      "controller": "did:kdid:beijing:Q123456789",
       "publicKeyJwk": {
         "kty": "EC",
         "crv": "SM2",
@@ -87,9 +87,30 @@ An example DID Document of did:kdid:beijing:Q123456789 is
     }
   ],
   "assertionMethod": [
-    " did:kdid:beijing:Q123456789#keys-1"
+    " did:kdid:beijing:Q123456789#keys-1",
+    {
+      "id":"did:kdid:beijing:Q123456789#keys-2",
+      "type":"SM2VerificationKey2022",
+      "controller":[
+        "did:kdid:beijing:Q123456789"
+      ],
+      "publicKeyJwk":{
+        "kty":"EC",
+        "crv":"SM2",
+        "x":"BrNV5ycOAPFNXmha1fzt583M3bXWd9lpQPW5AcO8wEU",
+        "y":"y_6KYDflQcF0jL6L80CnSbP80KxWMc1xWv3cd5DVpVc"
+      }
+    }
   ],
-  "service": []
+  "service": [
+    {
+      "id": "did:kdid:beijing:Q123456789#linked-domain",
+      "type": "LinkedDomains",
+      "serviceEndPoint": [
+        "https://www.kdid.com"
+      ]
+    }
+  ]
 }
 ```
 
@@ -176,7 +197,7 @@ Example:
       ],
       "id": " did:kdid:beijing:Q123456789",
       "alsoKnownAs": [
-        "test kdid"
+        "https://test.kdid.com/"
       ],
       "controller": [
         " did:kdid:beijing:Q123456789"
@@ -235,7 +256,7 @@ Example:
     ],
     "id": "did:kdid:beijing:QR357999286",
     "alsoKnownAs": [
-      "test update"
+      "https://test.kdid.com/"
     ],
     "controller": [
       "did:kdid:beijing:QR357999286"
@@ -255,10 +276,10 @@ Example:
         }
       }
     ],
-    "authenticationT": [
+    "authentication": [
       "did:kdid:beijing:QR357999286#keys-1",
       {
-        "id": "did:kdid:beijing:QR357999286#keys-1",
+        "id": "did:kdid:beijing:QR357999286#keys-2",
         "type": "SM2VerificationKey2022",
         "controller": [
           "did:kdid:beijing:QR357999286"
@@ -271,10 +292,10 @@ Example:
         }
       }
     ],
-    "assertionMethodT": [
+    "assertionMethod": [
       "did:kdid:beijing:QR357999286#keys-1",
       {
-        "id": "did:kdid:beijing:QR357999286#keys-1",
+        "id": "did:kdid:beijing:QR357999286#keys-2",
         "type": "SM2VerificationKey2022",
         "controller": [
           "did:kdid:beijing:QR357999286"
